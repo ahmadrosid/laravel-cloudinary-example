@@ -10,7 +10,7 @@ class FileUploadController extends Controller
 {
     public function index()
     {
-        $uploadedFiles = UploadedFile::orderBy('id','desc')->get();
+        $uploadedFiles = UploadedFile::latest()->get();
         return view('welcome', compact('uploadedFiles'));
     }
 
